@@ -15,7 +15,7 @@ export type ShortcutTrigger = string | readline.Key;
 
 export interface ShortcutConfig {
   /**
-   * shortcut trigger could be a string or a object like [readline.Key](https://nodejs.org/dist/latest-v18.x/docs/api/readline.html#rlwritedata-key)
+   * shortcut trigger could be a string or an object like [readline.Key](https://nodejs.org/dist/latest-v18.x/docs/api/readline.html#rlwritedata-key)
    **/
   trigger: ShortcutTrigger;
   /**
@@ -23,7 +23,7 @@ export interface ShortcutConfig {
    */
   description?: string;
   /**
-   * handler when trigger emitted.
+   * handler when trigger pressed.
    */
   action(): void | Promise<void>;
 }

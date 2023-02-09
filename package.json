@@ -22,7 +22,7 @@
     "clean": "rimraf lib",
     "lint": "eslint src",
     "prepare": "is-ci || husky install",
-    "example": "DEBUG=* pnpm ts-node --esm example/index.ts",
+    "example": "DEBUG=ttying pnpm ts-node --esm example/index.ts",
     "semantic-release": "semantic-release"
   },
   "repository": {
