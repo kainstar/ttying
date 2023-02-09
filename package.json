@@ -1,8 +1,7 @@
 {
-  "name": "@kainstar/typescript-npm-package-template",
+  "name": "ttying",
   "version": "1.0.0",
-  "description": "A template for creating npm packages using TypeScript and VSCode",
-  "sideEffects": false,
+  "description": "a tiny cli interactive library, help you accept commands in node app runtime",
   "type": "module",
   "exports": {
     ".": {
@@ -23,12 +22,12 @@
     "clean": "rimraf lib",
     "lint": "eslint src",
     "prepare": "is-ci || husky install",
-    "semantic-release": "semantic-release",
-    "test": "vitest run --coverage"
+    "example": "DEBUG=* pnpm ts-node --esm example/index.ts",
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kainstar/typescript-npm-package-template.git"
+    "url": "git+https://github.com/kainstar/ttying.git"
   },
   "license": "MIT",
   "author": {
@@ -40,16 +39,14 @@
     "node": ">=12.0"
   },
   "keywords": [
-    "boilerplate",
-    "template",
-    "typescript",
-    "vscode",
-    "semantic-release"
+    "tty",
+    "ttying",
+    "interactive"
   ],
   "bugs": {
-    "url": "https://github.com/kainstar/typescript-npm-package-template/issues"
+    "url": "https://github.com/kainstar/ttying/issues"
   },
-  "homepage": "https://github.com/kainstar/typescript-npm-package-template#readme",
+  "homepage": "https://github.com/kainstar/ttying#readme",
   "devDependencies": {
     "@commitlint/cli": "^17.4.2",
     "@commitlint/config-conventional": "^17.4.2",
@@ -59,10 +56,10 @@
     "@semantic-release/github": "^8.0.7",
     "@semantic-release/npm": "^9.0.2",
     "@semantic-release/release-notes-generator": "^10.0.3",
+    "@types/debug": "^4.1.7",
     "@types/node": "^18.11.18",
     "@typescript-eslint/eslint-plugin": "^5.50.0",
     "@typescript-eslint/parser": "^5.50.0",
-    "@vitest/coverage-c8": "^0.28.4",
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
     "dotenv": "^16.0.3",
@@ -77,8 +74,7 @@
     "semantic-release": "^20.1.0",
     "ts-node": "^10.9.1",
     "typescript": "^4.9.5",
-    "unbuild": "^1.1.1",
-    "vitest": "^0.28.4"
+    "unbuild": "^1.1.1"
   },
   "config": {
     "commitizen": {
@@ -87,5 +83,9 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "debug": "^4.3.4",
+    "picocolors": "^1.0.0"
   }
 }
