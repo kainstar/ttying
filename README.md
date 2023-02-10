@@ -81,7 +81,7 @@ type: `() => void | Promise<void>`
 
 The shortcut handler when trigger pressed.
 
-### printHelpFrequency
+### helpFrequency
 
 type: `'always' | 'once' | false`
 

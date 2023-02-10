@@ -39,7 +39,7 @@ export interface TTYingOptions {
    *
    * `false`: never print
    */
-  printHelpFrequency?: 'always' | 'once' | false;
+  helpFrequency?: 'always' | 'once' | false;
   /**
    *  You can pass it to override default help content
    */
@@ -94,7 +94,7 @@ function isShortcutTriggerMatch(trigger: ShortcutTrigger, input: string, keyInfo
 export function ttying(options: TTYingOptions) {
   const { stdin } = process;
 
-  const { shortcuts, helpContent: optionHelpContent, printHelpFrequency = 'always' } = options;
+  const { shortcuts, helpContent: optionHelpContent, helpFrequency = 'always' } = options;
   const helpContent = optionHelpContent ?? generateHelpContentFromShortcuts(shortcuts);
 
   function help() {
@@ -127,7 +127,7 @@ export function ttying(options: TTYingOptions) {
         runningAction = true;
 
         await matchedShortcut.action();
-        if (printHelpFrequency === 'always') {
+        if (helpFrequency === 'always') {
           help();
         }
         runningAction = false;
@@ -137,7 +137,7 @@ export function ttying(options: TTYingOptions) {
     // Start the keypress listener for the process
     stdin.on('keypress', handler);
 
-    if (printHelpFrequency === 'always' || printHelpFrequency === 'once') {
+    if (helpFrequency === 'always' || helpFrequency === 'once') {
       help();
     }
 
