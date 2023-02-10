@@ -1,6 +1,6 @@
 {
   "name": "ttying",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "a tiny cli interactive library, help you accept commands in node app runtime",
   "type": "module",
   "exports": {
